@@ -1,7 +1,7 @@
 // app.js
 
 const secondHand = document.querySelectorAll('.second-hand');
-const minHand = document.querySelector('.min-hand');
+const minHand = document.querySelectorAll('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 
 function setDate() {
@@ -17,7 +17,10 @@ function setDate() {
 		hand.style.transform = `rotate(${secondsDegrees}deg)`;
 	});
 	//secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-	minHand.style.transform = `rotate(${minuteDegrees}deg)`;
+	minHand.forEach(hand => {
+		hand.style.transform = `rotate(${minuteDegrees}deg)`;
+	});
+
 	hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
 }
